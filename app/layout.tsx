@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -7,6 +8,8 @@ export const metadata: Metadata = {
     'Crea CVs interactivos y atractivos online. Integra multimedia y exporta en PDF. Destaca en tu búsqueda de empleo.',
 };
 
+const inter = Inter({ subsets: ['latin'] });
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -14,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
